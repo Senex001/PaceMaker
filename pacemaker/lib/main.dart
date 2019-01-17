@@ -25,6 +25,25 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State {
   @override Widget build(BuildContext context) {
-    return new Text('Todo');
+    return new Center(
+      child: Column(
+        children: <Widget>[
+          //Min Speed
+          Expanded(
+            child: Text('Set Minimum Speed'),
+          ),
+          Expanded(
+            child: Text('todo'),
+          ),
+          //Max Speed
+          Expanded(
+            child: Text('Set Maximum Speed'),
+          ),
+          Expanded(
+            child: Text('todo'),
+          )
+        ],
+      ),
+    );
   }
 }
