@@ -3,6 +3,7 @@ import 'package:pacemaker/first_column.dart';
 import 'package:pacemaker/second_column.dart';
 import 'package:pacemaker/third_column.dart';
 import 'package:pacemaker/forth_column.dart';
+import 'package:pacemaker/fifth_column.dart';
 
 void main() => runApp(MaterialApp(
   title: 'Pace Maker',
@@ -24,6 +25,7 @@ class PaceMakerHome extends StatelessWidget {
              Expanded(child:SecondColumn()),
              Expanded(child:ThirdColumn()),
              Expanded(child:ForthColumn()),
+             Expanded(child: FifthColumn()),
     ],
     ),
     ),
