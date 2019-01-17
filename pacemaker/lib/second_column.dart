@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class SecondColumn extends StatefulWidget {
   @override
-  SecondColumnState createState() => SecondColumnState();
+  _SecondColumnState createState() => _SecondColumnState();
 }
 
-class SecondColumnState extends State {
+class _SecondColumnState extends State {
   double minimum = 9;
 
   @override
@@ -14,12 +14,12 @@ class SecondColumnState extends State {
         child : Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            new DecrementButton(onPressed : decrement),
+            new _DecrementButton(onPressed : decrement),
             new Text(
               minimum.toStringAsFixed(1),
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            new IncrementButton(onPressed : increment)
+            new _IncrementButton(onPressed : increment)
 
           ],
         ));
@@ -39,8 +39,8 @@ class SecondColumnState extends State {
 
 }
 
-class DecrementButton extends RaisedButton {
-  DecrementButton({this.onPressed});
+class _DecrementButton extends RaisedButton {
+  _DecrementButton({this.onPressed});
 
   final VoidCallback onPressed;
 
@@ -54,8 +54,8 @@ class DecrementButton extends RaisedButton {
   }
 }
 
-class IncrementButton extends RaisedButton {
-  IncrementButton({this.onPressed});
+class _IncrementButton extends RaisedButton {
+  _IncrementButton({this.onPressed});
 
   final VoidCallback onPressed;
 

@@ -14,11 +14,18 @@ class PaceMakerHome extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return new DefaultTabController(
+        length: 2,
+        child: Scaffold(
       appBar: new AppBar(
         title: new Text('Pace Maker'),
+    bottom: TabBar(tabs: [
+      Tab(icon: Icon(Icons.home)),
+      Tab(icon: Icon(Icons.timer)),
+    ]),
       ),
-      body: Center(
+      body: TabBarView(children: <Widget>[
+        new Center(
         child: Column(
           children: <Widget>[
              Expanded(child: FirstColumn()),
@@ -27,8 +34,10 @@ class PaceMakerHome extends StatelessWidget {
              Expanded(child:ForthColumn()),
              Expanded(child: FifthColumn()),
     ],
+    )),
+    new Text('todo')
+    ]
     ),
-    ),
-    );
+    ));
   }
 }

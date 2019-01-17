@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class FirstColumn extends StatefulWidget {
   @override
-  FirstColumnState createState() => FirstColumnState();
+  _FirstColumnState createState() => _FirstColumnState();
 }
 
-class FirstColumnState extends State {
+class _FirstColumnState extends State {
   @override
   Widget build(BuildContext context) {
     return new Center(

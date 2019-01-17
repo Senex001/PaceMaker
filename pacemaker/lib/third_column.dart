@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class ThirdColumn extends StatefulWidget {
   @override
-  ThirdColumnState createState() => ThirdColumnState();
+  _ThirdColumnState createState() => _ThirdColumnState();
 }
 
-class ThirdColumnState extends State {
+class _ThirdColumnState extends State {
   @override
   Widget build(BuildContext context) {
     return new Center(

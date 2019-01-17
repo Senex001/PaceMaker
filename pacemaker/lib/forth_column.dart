@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class ForthColumn extends StatefulWidget {
   @override
-  ForthColumnState createState() => ForthColumnState();
+  _ForthColumnState createState() => _ForthColumnState();
 }
 
-class ForthColumnState extends State {
+class _ForthColumnState extends State {
   double maximum = 11;
 
   @override

@@ -3,33 +3,50 @@ import 'package:flutter/material.dart';
 
 class FifthColumn extends StatefulWidget {
   @override
-  FifthColumnState createState() => FifthColumnState();
+  _FifthColumnState createState() => _FifthColumnState();
 }
 
-class FifthColumnState extends State {
+class _FifthColumnState extends State {
+  bool _tracking = false;
+
   @override
   Widget build(BuildContext context) {
     return new Container(
         padding: EdgeInsets.all(20),
         child: Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-      children: <Widget>[
-        new StartButton(onPressed: start),
-        new StopButton(onPressed: stop),
-      ],
-    ));
+          children: <Widget>[
+            _buildText(),
+            Switch(value: _tracking, onChanged: trackSpeed)
+          ],
+        ));
   }
 
-  void start() {
-    //todo
+  Widget _buildText() {
+    if (!_tracking) {
+      return new Text(
+        'Turn speedtracking on:',
+        style: TextStyle(fontSize: 20),
+      );
+    } else {
+      return new Text(
+        'Turn speedtracking off:',
+        style: TextStyle(fontSize: 20),
+      );
+    }
   }
-  void stop() {
-    //todo
+
+  void trackSpeed(bool tracker) {
+    setState(() {
+      _tracking = tracker;
+    });
   }
 }
 
+
+/*
 class StartButton extends RaisedButton {
   StartButton({this.onPressed});
 
@@ -66,4 +83,4 @@ class StopButton extends RaisedButton {
 
     ));
   }
-}
+}*/
