@@ -9,7 +9,10 @@ class FirstColumnState extends State {
   @override
   Widget build(BuildContext context) {
     return new Center(
-        child : Text('Set Minimum Speed'));
+        child : Text(
+          'Set Minimum Speed :',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ));
   }
 
 }
