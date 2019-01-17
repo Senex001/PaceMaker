@@ -4,6 +4,7 @@ import 'package:pacemaker/second_column.dart';
 import 'package:pacemaker/third_column.dart';
 import 'package:pacemaker/forth_column.dart';
 import 'package:pacemaker/fifth_column.dart';
+import 'package:pacemaker/speed_tracker.dart';
 
 void main() => runApp(MaterialApp(
   title: 'Pace Maker',
@@ -35,7 +36,7 @@ class PaceMakerHome extends StatelessWidget {
              Expanded(child: FifthColumn()),
     ],
     )),
-    new Text('todo')
+    new SpeedTracker(),
     ]
     ),
     ));

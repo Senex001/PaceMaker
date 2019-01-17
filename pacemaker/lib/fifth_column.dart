@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 class FifthColumn extends StatefulWidget {
   @override
   _FifthColumnState createState() => _FifthColumnState();
+
+  bool getTracking() {
+    return _FifthColumnState()._tracking;
+  }
 }
 
-class _FifthColumnState extends State {
+class _FifthColumnState extends State with AutomaticKeepAliveClientMixin {
   bool _tracking = false;
 
   @override
@@ -43,44 +47,7 @@ class _FifthColumnState extends State {
       _tracking = tracker;
     });
   }
-}
-
-
-/*
-class StartButton extends RaisedButton {
-  StartButton({this.onPressed});
-
-  final VoidCallback onPressed;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        height: 70,
-        width: 150,
-        child: RaisedButton(
-
-      onPressed: onPressed,
-      child: new Text('START'),
-      color: Colors.green,
-    ));
-  }
+  bool get wantKeepAlive => true;
 }
-
-class StopButton extends RaisedButton {
-  StopButton({this.onPressed});
-
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        height: 70,
-        width: 150,
-        child: RaisedButton(
-          onPressed: onPressed,
-          child: new Text('STOP'),
-          color: Colors.red,
-
-    ));
-  }
-}*/
