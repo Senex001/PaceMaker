@@ -12,17 +12,17 @@ class _ForthColumnState extends State {
   @override
   Widget build(BuildContext context) {
     return new Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            new DecrementButton(onPressed : decrement),
-            new Text(
-              maximum.toStringAsFixed(1),
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            new IncrementButton(onPressed : increment)
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        new DecrementButton(onPressed : decrement),
+        new Text(
+          maximum.toStringAsFixed(1),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        new IncrementButton(onPressed : increment)
 
-          ],
-        );
+      ],
+    );
   }
 
   void decrement() {

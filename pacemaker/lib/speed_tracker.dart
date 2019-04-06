@@ -85,11 +85,10 @@ class _SpeedTrackerState extends State{
   }
 
   Widget _buildText() {
-       return new Text((_currentLocation != null
-          ? 'Current Speed: ${_currentLocation.speed}\n'
-          : 'Error: $error\n'),
-        style: TextStyle(fontSize: 20),
-      );
-    }
+    return new Text((_currentLocation != null
+        ? 'Current Speed: ${_currentLocation.speed}\n'
+        : 'Error: $error\n'),
+      style: TextStyle(fontSize: 20),
+    );
+  }
 }
-
