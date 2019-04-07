@@ -10,7 +10,7 @@ class SpeedTracker extends StatefulWidget {
   _SpeedTrackerState createState() => _SpeedTrackerState();
 }
 
-class _SpeedTrackerState extends State{
+class _SpeedTrackerState extends State with AutomaticKeepAliveClientMixin{
 
   LocationData _startLocation;
   LocationData _currentLocation;
@@ -91,4 +91,7 @@ class _SpeedTrackerState extends State{
       style: TextStyle(fontSize: 20),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

@@ -8,7 +8,7 @@ class BluetoothConnector extends StatefulWidget {
   @override
   _BluetoothConnectorState createState() => _BluetoothConnectorState();
 }
-class _BluetoothConnectorState extends State {
+class _BluetoothConnectorState extends State with AutomaticKeepAliveClientMixin {
 
   FlutterBlue _flutterBlue = FlutterBlue.instance;
 
@@ -90,7 +90,9 @@ class _BluetoothConnectorState extends State {
   }
 
   _connect(BluetoothDevice d) async {
-    device = d;
+    setState(() {
+      device = d;
+
     // Connect to device
     deviceConnection = _flutterBlue
         .connect(device, timeout: const Duration(seconds: 4))
@@ -98,7 +100,7 @@ class _BluetoothConnectorState extends State {
       null,
       onDone: _disconnect,
     );
-
+    });
     // Update the connection state immediately
     device.state.then((s) {
       setState(() {
@@ -128,8 +130,8 @@ class _BluetoothConnectorState extends State {
     deviceStateSubscription?.cancel();
     deviceStateSubscription = null;
     deviceConnection?.cancel();
-    deviceConnection = null;
     setState(() {
+    deviceConnection = null;
       device = null;
     });
   }
@@ -208,7 +210,7 @@ class _BluetoothConnectorState extends State {
         .toList();
   }
 
-  List<Widget> _buildServiceTiles() {
+ /* List<Widget> _buildServiceTiles() {
     return services
         .map(
           (s) => new ServiceTile(
@@ -236,9 +238,9 @@ class _BluetoothConnectorState extends State {
       ),
     )
         .toList();
-  }
+  }*/
 
-  _buildActionButtons() {
+  /*_buildActionButtons() {
     if (isConnected) {
       return <Widget>[
         new IconButton(
@@ -247,7 +249,7 @@ class _BluetoothConnectorState extends State {
         )
       ];
     }
-  }
+  }*/
 
   _buildAlertTile() {
     return new Container(
@@ -273,8 +275,8 @@ class _BluetoothConnectorState extends State {
         title: new Text('Device is ${deviceState.toString().split('.')[1]}.'),
         subtitle: new Text('${device.id}'),
         trailing: new IconButton(
-          icon: const Icon(Icons.refresh),
-          onPressed: () => _refreshDeviceState(device),
+          icon: const Icon(Icons.cancel),
+          onPressed: () => _disconnect(),
           color: Theme.of(context).iconTheme.color.withOpacity(0.5),
         ));
   }
@@ -292,7 +294,7 @@ class _BluetoothConnectorState extends State {
     }
     if (isConnected) {
       tiles.add(_buildDeviceStateTile());
-      tiles.addAll(_buildServiceTiles());
+      //tiles.addAll(_buildServiceTiles());
     } else {
       tiles.addAll(_buildScanResultTiles());
     }
@@ -308,4 +310,7 @@ class _BluetoothConnectorState extends State {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

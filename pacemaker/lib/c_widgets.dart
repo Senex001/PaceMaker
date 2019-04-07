@@ -113,6 +113,7 @@ class ScanResultTile extends StatelessWidget {
   }
 }
 
+/*
 class ServiceTile extends StatelessWidget {
   final BluetoothService service;
   final List<CharacteristicTile> characteristicTiles;
@@ -274,3 +275,4 @@ class DescriptorTile extends StatelessWidget {
     );
   }
 }
+*/
