@@ -290,20 +290,18 @@ class _PaceMakerState extends State {
       if (globals.tracker) {
         if (_currentSpeed < globals.minSpeed) {
           _writeVibrationCharacteristic([0xff,0xff,0xff,0xff]);
-          sleep(const Duration(milliseconds:150));
+          sleep(const Duration(milliseconds:200));
           _writeVibrationCharacteristic([0,0,0,0]);
           sleep(const Duration(milliseconds:200));
           _writeVibrationCharacteristic([0xff,0xff,0xff,0xff]);
-          sleep(const Duration(milliseconds:150));
+          sleep(const Duration(milliseconds:200));
           _writeVibrationCharacteristic([0,0,0,0]);
           sleep(const Duration(milliseconds:200));
-          _writeVibrationCharacteristic([0xff,0xff,0xff,0xff]);
-          sleep(const Duration(milliseconds:150));
-          _writeVibrationCharacteristic([0,0,0,0]);
         } else if (_currentSpeed > globals.maxSpeed) {
           _writeVibrationCharacteristic([0xff,0xff,0xff,0xff]);
-          sleep(const Duration(seconds:1));
+          sleep(const Duration(milliseconds:800));
           _writeVibrationCharacteristic([0,0,0,0]);
+          sleep(const Duration(milliseconds:800));
         } else {
           _writeVibrationCharacteristic([0, 0, 0, 0]);
         }
